@@ -6,9 +6,11 @@ using UnityEngine.Tilemaps;
 public class TerrainGenerator : MonoBehaviour
 {
     public int[,] mapArray;
-    [SerializeField] Tile baseTile;
+    [SerializeField] TileBase tile;
     Tilemap tilemap;
     public int terrainWidth, terrainHeight;
+    private Tilemap map;
+    // private Tile tile;
 
 
     void Start()
