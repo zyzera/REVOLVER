@@ -12,18 +12,15 @@ public class TerrainGenerator : MonoBehaviour
     private Tilemap map;
     // private Tile tile;
 
-
     void Start()
-    {
+    {        
         tilemap = GetComponent<Tilemap>();
+        GenerateTerrain();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            GenerateTerrain();
-        }
+
     }
 
 
@@ -107,6 +104,6 @@ public class TerrainGenerator : MonoBehaviour
     {
         float seed = Random.Range(.1f, 1f);
         mapArray = GenerateArray(terrainWidth, terrainHeight, true);
-        RenderMap(PerlinNoise(mapArray, seed), map, tile);
+        RenderMap(PerlinNoise(mapArray, seed), tilemap, tile);
     }
 }
